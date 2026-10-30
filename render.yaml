@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: el-eco
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: OLLAMA_HOST
+        sync: false
+      - key: OLLAMA_MODEL
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: ELEVENLABS_VOICE_ID
+        sync: false
+      - key: TABPFN_TOKEN
+        sync: false

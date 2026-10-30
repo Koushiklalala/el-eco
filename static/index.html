@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0614">
+  <title>El Eco — a séance for abandoned projects</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-pumpkin" viewBox="0 0 100 92">
+        <path d="M46 20 C45 10 50 4 59 3 C58 9 57 14 57 21 Z" fill="#4f7d22"/>
+        <path d="M58 5 C64 3 69 6 71 11" fill="none" stroke="#4f7d22" stroke-width="2.6" stroke-linecap="round"/>
+        <ellipse cx="26" cy="56" rx="22" ry="31" fill="#c94a06"/>
+        <ellipse cx="74" cy="56" rx="22" ry="31" fill="#c94a06"/>
+        <ellipse cx="38" cy="56" rx="22" ry="34" fill="#ee640c"/>
+        <ellipse cx="62" cy="56" rx="22" ry="34" fill="#ee640c"/>
+        <ellipse cx="50" cy="56" rx="19" ry="35" fill="#ff8a2a"/>
+        <g class="face">
+          <path d="M35 42 L45 57 L25 57 Z"/>
+          <path d="M65 42 L75 57 L55 57 Z"/>
+          <path d="M50 59 L45 68 L55 68 Z"/>
+          <path d="M26 71 Q50 94 74 71 L67 69 L62 76 L56 70 L50 77 L44 70 L38 76 L33 69 Z"/>
+        </g>
+      </symbol>
+
+      <symbol id="i-ghost" viewBox="0 0 80 100">
+        <path d="M10 92 V42 C10 19 25 6 40 6 C55 6 70 19 70 42 V92 L60 83 L50 93 L40 83 L30 93 L20 83 Z" fill="#eefcff"/>
+        <ellipse cx="29" cy="42" rx="5.5" ry="8.5" fill="#1a0b2e"/>
+        <ellipse cx="51" cy="42" rx="5.5" ry="8.5" fill="#1a0b2e"/>
+        <ellipse cx="40" cy="62" rx="5" ry="7" fill="#1a0b2e"/>
+      </symbol>
+
+      <symbol id="i-bat" viewBox="0 0 120 60">
+        <path d="M60 32 C57 24 53 21 49 23 C40 10 24 6 4 12 C14 16 18 24 16 34 C24 28 30 30 34 38 C40 30 46 32 50 40 C54 36 57 35 60 42 C63 35 66 36 70 40 C74 32 80 30 86 38 C90 30 96 28 104 34 C102 24 106 16 116 12 C96 6 80 10 71 23 C67 21 63 24 60 32 Z"/>
+        <path d="M54 22 L56 12 L60 20 L64 12 L66 22 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="sky" aria-hidden="true">
+    <div class="moon"><i></i><i></i><i></i></div>
+    <div class="stars" id="stars"></div>
+    <div class="fog fog-a"></div>
+    <div class="fog fog-b"></div>
+
+    <span class="bat" style="--top: 9%; --d: 19s; --delay: 0s; --s: 46px"><span><svg viewBox="0 0 120 60"><use href="#i-bat"/></svg></span></span>
+    <span class="bat" style="--top: 22%; --d: 27s; --delay: -9s; --s: 34px"><span><svg viewBox="0 0 120 60"><use href="#i-bat"/></svg></span></span>
+    <span class="bat" style="--top: 14%; --d: 33s; --delay: -20s; --s: 28px"><span><svg viewBox="0 0 120 60"><use href="#i-bat"/></svg></span></span>
+
+    <span class="drifter" style="--x: 8%; --d: 26s; --delay: -4s; --s: 54px"><span><svg viewBox="0 0 80 100"><use href="#i-ghost"/></svg></span></span>
+    <span class="drifter" style="--x: 38%; --d: 34s; --delay: -17s; --s: 38px"><span><svg viewBox="0 0 80 100"><use href="#i-ghost"/></svg></span></span>
+    <span class="drifter" style="--x: 64%; --d: 30s; --delay: -9s; --s: 62px"><span><svg viewBox="0 0 80 100"><use href="#i-ghost"/></svg></span></span>
+    <span class="drifter" style="--x: 90%; --d: 38s; --delay: -26s; --s: 44px"><span><svg viewBox="0 0 80 100"><use href="#i-ghost"/></svg></span></span>
+
+    <svg class="yardscape" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice">
+      <g fill="#05020b">
+        <path d="M0 260 V214 Q120 194 260 211 T520 204 T800 213 T1080 199 T1440 210 V260 Z"/>
+        <path d="M150 222 V172 Q150 148 175 148 Q200 148 200 172 V222 Z"/>
+        <path d="M330 218 V184 Q330 166 348 166 Q366 166 366 184 V218 Z"/>
+        <path d="M560 214 V160 Q560 134 588 134 Q616 134 616 160 V214 Z"/>
+        <path d="M880 214 V178 Q880 158 900 158 Q920 158 920 178 V214 Z"/>
+        <path d="M1010 208 V168 Q1010 146 1034 146 Q1058 146 1058 168 V208 Z"/>
+      </g>
+      <g fill="none" stroke="#05020b" stroke-width="9" stroke-linecap="round">
+        <path d="M740 214 V158 M720 176 H760"/>
+        <path d="M1160 208 V150 M1140 168 H1180"/>
+      </g>
+      <g fill="none" stroke="#05020b" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1300 214 C1296 170 1306 130 1298 86" stroke-width="16"/>
+        <path d="M1298 112 C1270 96 1250 84 1226 52" stroke-width="9"/>
+        <path d="M1226 52 C1214 44 1208 32 1196 26 M1232 56 C1228 40 1230 30 1240 18" stroke-width="5"/>
+        <path d="M1302 130 C1330 114 1352 108 1380 76" stroke-width="9"/>
+        <path d="M1380 76 C1392 68 1398 56 1412 50 M1374 80 C1376 62 1370 50 1360 40" stroke-width="5"/>
+        <path d="M1298 88 C1290 66 1296 46 1288 24" stroke-width="7"/>
+      </g>
+      <use href="#i-pumpkin" x="402" y="148" width="62" height="57" class="ground-pumpkin" style="--face:#ffd36b"/>
+      <use href="#i-pumpkin" x="1092" y="164" width="44" height="40" class="ground-pumpkin small" style="--face:#ffd36b"/>
+    </svg>
+
+    <div class="flash"></div>
+  </div>
+
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 100 92" aria-hidden="true" style="--face:#ffe27a"><use href="#i-pumpkin"/></svg>
+        <div>
+          <h1>El Eco</h1>
+          <p class="tag">A séance for projects you left in the dark</p>
+        </div>
+      </div>
+      <div class="tools">
+        <ul class="engines" id="engines" aria-label="What is running on this machine">
+          <li data-engine="tabpfn"><i></i>TabPFN-3.5</li>
+          <li data-engine="gemma"><i></i>Gemma</li>
+          <li data-engine="browserbase"><i></i>Browserbase</li>
+          <li data-engine="elevenlabs"><i></i>ElevenLabs</li>
+        </ul>
+        <button type="button" id="music" class="music" aria-pressed="false">
+          <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="music-label">Silent</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <section id="gate" class="view gate">
+        <div class="gate-head">
+          <p class="kicker">Hacktoberfest 2026 · Ghost in the Machine</p>
+          <h2>Whose ghost shall we raise?</h2>
+        </div>
+        <div class="choices">
+          <article class="choice" style="--i: 0">
+            <svg class="icon" viewBox="0 0 80 100" aria-hidden="true"><use href="#i-ghost"/></svg>
+            <h3>The sample ghost</h3>
+            <p>lumen-notes, a fictional journal. Nothing of yours is read and nothing is fetched.</p>
+            <ul class="teasers" aria-label="What the sample holds">
+              <li>142 commits</li>
+              <li>36 living weeks</li>
+              <li>silent since Feb 2023</li>
+            </ul>
+            <button type="button" id="light-sample">Raise lumen-notes</button>
+          </article>
+
+          <article class="choice" style="--i: 1">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M12 58 V26 C12 6 52 6 52 26 V58 Z" fill="#cfc4e6"/>
+              <path d="M32 24 V44 M24 32 H40" stroke="#2a1745" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <h3>A public GitHub life</h3>
+            <p>Type a username and walk its repositories. Only what GitHub shows the world.</p>
+            <form id="user-form">
+              <label for="username">GitHub username</label>
+              <input id="username" name="username" autocomplete="off" placeholder="octocat" required>
+              <button type="submit">Walk the graveyard</button>
+            </form>
+          </article>
+
+          <article class="choice" style="--i: 2">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M14 8 H44 L52 16 V56 H14 Z" fill="#cfc4e6"/>
+              <path d="M44 8 V16 H52" fill="#9d8cc4"/>
+              <path d="M22 28 H44 M22 36 H44 M22 44 H36" stroke="#2a1745" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+            <h3>A record on this computer</h3>
+            <p>A CSV of dates and counts, like <code>2022-06-06,4</code>. It goes only to this machine.</p>
+            <form id="csv-form">
+              <label for="life-name">Name</label>
+              <input id="life-name" name="name" maxlength="60" placeholder="the name it had">
+              <label for="csv-file">CSV file</label>
+              <input id="csv-file" type="file" accept=".csv,text/csv">
+              <button type="submit">Lay it on the altar</button>
+            </form>
+          </article>
+        </div>
+        <p id="gate-error" class="error" role="alert"></p>
+      </section>
+
+      <section id="yard" class="view yard" hidden>
+        <div class="row">
+          <div>
+            <p class="kicker">The graveyard</p>
+            <h2 id="yard-title">Quiet repositories</h2>
+          </div>
+          <button type="button" id="yard-back" class="ghost">Back</button>
+        </div>
+        <p id="yard-note" class="fine"></p>
+        <ul id="stones" class="stones"></ul>
+      </section>
+
+      <section id="altar" class="view altar" hidden>
+        <div id="wait" class="wait">
+          <div class="candles" aria-hidden="true">
+            <div class="candle" id="candle-0"><svg viewBox="0 0 100 92"><use href="#i-pumpkin"/></svg></div>
+            <div class="candle tall" id="candle-1"><svg viewBox="0 0 100 92"><use href="#i-pumpkin"/></svg></div>
+            <div class="candle" id="candle-2"><svg viewBox="0 0 100 92"><use href="#i-pumpkin"/></svg></div>
+          </div>
+          <p id="status" class="status" aria-live="polite"></p>
+        </div>
+
+        <article id="ofrenda" class="ofrenda" hidden>
+          <section class="left">
+            <p class="kicker" id="source-line"></p>
+            <h2 id="epitaph-name"></h2>
+            <p id="epitaph-desc"></p>
+            <dl id="facts" class="facts"></dl>
+            <figure class="chart-wrap">
+              <div id="chart"></div>
+              <figcaption>
+                <ul class="legend">
+                  <li class="l-commits"><i></i>commits a week</li>
+                  <li class="l-ghost" id="legend-ghost"><i></i>what TabPFN says would have come</li>
+                </ul>
+                <p id="chart-caption"></p>
+              </figcaption>
+            </figure>
+          </section>
+
+          <section class="right">
+            <div class="tomb">
+              <p class="tomb-label">The eulogy</p>
+              <blockquote id="eulogy"></blockquote>
+              <p id="eulogy-empty" class="empty" hidden>Nothing to mourn yet. This one is still breathing.</p>
+            </div>
+            <p id="eulogy-note" class="fine"></p>
+            <div class="voices">
+              <button type="button" id="speak-local">Speak on this machine</button>
+              <button type="button" id="speak-eleven" class="ghost">Send to ElevenLabs</button>
+              <div class="wave" id="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <audio id="player" controls hidden></audio>
+            <p id="voice-note" class="fine"></p>
+            <button type="button" id="again" class="ghost again">Raise another ghost</button>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p>TabPFN-3.5 draws the unwritten weeks. Gemma speaks only with numbers from the record. It all runs on this machine.</p>
+    </footer>
+  </div>
+  <script src="/static/music.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
