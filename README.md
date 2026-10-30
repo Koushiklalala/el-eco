@@ -64,7 +64,7 @@ The first time you call TabPFN it can take a while on CPU. The dev server should
 docker compose up --build
 ```
 
-The app is published on `127.0.0.1:8000`. Compose points `OLLAMA_HOST` at `host.docker.internal:11434` so a Gemma that is already running on the host can answer. The image installs TabPFN, so it is large, and a small machine can run out of memory while the model sits in RAM. Render's blueprint is `render.yaml`: a Docker web service on the starter plan, with `healthCheckPath: /api/health`. Set `TABPFN_TOKEN` and, if you want the séance there too, an `OLLAMA_HOST` the service can reach. Do not put a real token in the blueprint file.
+The app is published on `127.0.0.1:8000`. Compose points `OLLAMA_HOST` at `host.docker.internal:11434` so a Gemma that is already running on the host can answer. The image installs TabPFN, so it is large, and a small machine can run out of memory while the model sits in RAM. Render's blueprint is `render.yaml`: a Docker web service on the standard plan (1 CPU, 2 GB), with `healthCheckPath: /api/health`. Set `TABPFN_TOKEN` and, if you want the séance there too, an `OLLAMA_HOST` the service can reach. Do not put a real token in the blueprint file.
 
 ## Prize categories this project actually uses
 
